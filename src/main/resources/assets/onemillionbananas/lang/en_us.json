@@ -1,4 +1,9 @@
 {
   "item.onemillionbananas.cobalt_ingot": "Cobalt Ingot",
-  "item.onemillionbananas.cobalt_nugget": "Cobalt Nugget"
+  "item.onemillionbananas.cobalt_nugget": "Cobalt Nugget",
+
+  "block.onemillionbananas.cobalt_block": "Cobalt Block",
+  "block.onemillionbananas.cobalt_ore": "Cobalt Ore",
+  "block.onemillionbananas.deepslate_cobalt_ore": "Deepslate Cobalt Ore",
+  "block.onemillionbananas.raw_cobalt_block": "Raw Cobalt Block"
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "onemillionbananas:block/deepslate_cobalt_ore"
+  }
+}

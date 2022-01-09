@@ -1,5 +1,6 @@
 package net.lordoflizardz.onemillionbananas;
 
+import net.lordoflizardz.onemillionbananas.block.ModBlocks;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -32,6 +33,7 @@ public class OneMillionBananas
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItem.register(eventBus);
+        ModBlocks.register(eventBus);
 
         eventBus.addListener(this::setup);
 
