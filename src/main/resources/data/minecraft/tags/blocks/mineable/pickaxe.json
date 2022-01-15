@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "onemillionbananas:cobalt_block",
+    "onemillionbananas:raw_cobalt_block",
+    "onemillionbananas:cobalt_ore",
+    "onemillionbananas:deepslate_cobalt_ore"
+  ]
+}
