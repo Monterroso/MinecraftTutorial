@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas.item;
 
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
+import net.lordoflizardz.onemillionbananas.item.custom.DowsingRodItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,6 +18,9 @@ public class ModItem {
 
     public static final RegistryObject<Item> COBALT_NUGGET = ITEMS.register("cobalt_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+
+    public static final RegistryObject<Item> DOWSING_ROD = ITEMS.register("dowsing_rod",
+            () -> new DowsingRodItem(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).durability(16)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
