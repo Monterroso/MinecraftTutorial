@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas.block;
 
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
+import net.lordoflizardz.onemillionbananas.block.custom.SpeedyBlock;
 import net.lordoflizardz.onemillionbananas.item.ModCreativeModeTab;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.minecraft.world.item.BlockItem;
@@ -31,6 +32,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> RAW_COBALT_BLOCK = registerBlock("raw_cobalt_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
+
+    public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
+            () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
