@@ -12,5 +12,9 @@
   "block.onemillionbananas.speedy_block": "Speedy Block",
 
   "itemGroup.coursemodtag": "OMB Mod",
-  "item.onemillionbananas.dowsing_rod.no_valuables": "No valuable ore found"
+  "item.onemillionbananas.dowsing_rod.no_valuables": "No valuable ore found",
+
+  "tooltip.onemillionbananas.dousing_rod.tooltip.shift": "Right click to find valuables",
+  "tooltip.onemillionbananas.dousing_rod.tooltip": "Press §eSHIFT§r for hint",
+  "tooltip.onemillionbananas.speedy_block.tooltip": "Zoom zoom!"
 }

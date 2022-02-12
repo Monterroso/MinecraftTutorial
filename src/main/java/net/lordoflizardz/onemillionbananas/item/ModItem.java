@@ -25,6 +25,9 @@ public class ModItem {
     public static final RegistryObject<Item> COAL_SLIVER = ITEMS.register("coal_sliver",
             () -> new CoalSliverItem((new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB))));
 
+    public static final RegistryObject<Item> TURNUP = ITEMS.register("turnip",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFood.TURNIP)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
