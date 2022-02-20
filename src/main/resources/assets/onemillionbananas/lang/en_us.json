@@ -12,6 +12,8 @@
   "block.onemillionbananas.speedy_block": "Speedy Block",
   "block.onemillionbananas.cobalt_stairs": "Cobalt Stairs",
   "block.onemillionbananas.cobalt_slab": "Cobalt Slab",
+  "block.onemillionbananas.cobalt_button": "Cobalt Button",
+  "block.onemillionbananas.cobalt_pressure_plate": "Cobalt Pressure Plate",
 
   "itemGroup.coursemodtag": "OMB Mod",
   "item.onemillionbananas.dowsing_rod.no_valuables": "No valuable ore found",
