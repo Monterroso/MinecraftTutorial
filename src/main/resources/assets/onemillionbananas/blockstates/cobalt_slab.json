@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "onemillionbananas:block/cobalt_slab"
+    },
+    "type=double": {
+      "model": "onemillionbananas:block/cobalt_block"
+    },
+    "type=top": {
+      "model": "onemillionbananas:block/cobalt_slab_top"
+    }
+  }
+}
