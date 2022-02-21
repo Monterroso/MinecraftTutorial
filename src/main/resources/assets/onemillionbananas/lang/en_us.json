@@ -14,6 +14,9 @@
   "block.onemillionbananas.cobalt_slab": "Cobalt Slab",
   "block.onemillionbananas.cobalt_button": "Cobalt Button",
   "block.onemillionbananas.cobalt_pressure_plate": "Cobalt Pressure Plate",
+  "block.onemillionbananas.cobalt_fence": "Cobalt Fence",
+  "block.onemillionbananas.cobalt_fence_gate": "Cobalt Fence Gate",
+  "block.onemillionbananas.cobalt_wall": "Cobalt Wall",
 
   "itemGroup.coursemodtag": "OMB Mod",
   "item.onemillionbananas.dowsing_rod.no_valuables": "No valuable ore found",
