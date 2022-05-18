@@ -4,6 +4,11 @@
   "item.onemillionbananas.dowsing_rod": "Dowsing Rod",
   "item.onemillionbananas.coal_sliver": "Coal Sliver",
   "item.onemillionbananas.turnip": "Turnip",
+  "item.onemillionbananas.cobalt_sword": "Cobalt Sword",
+  "item.onemillionbananas.cobalt_pickaxe": "Cobalt Pickaxe",
+  "item.onemillionbananas.cobalt_shovel": "Cobalt Shovel",
+  "item.onemillionbananas.cobalt_axe": "Cobalt Axe",
+  "item.onemillionbananas.cobalt_hoe": "Cobalt Hoe",
 
   "block.onemillionbananas.cobalt_block": "Cobalt Block",
   "block.onemillionbananas.cobalt_ore": "Cobalt Ore",
@@ -17,6 +22,9 @@
   "block.onemillionbananas.cobalt_fence": "Cobalt Fence",
   "block.onemillionbananas.cobalt_fence_gate": "Cobalt Fence Gate",
   "block.onemillionbananas.cobalt_wall": "Cobalt Wall",
+  "block.onemillionbananas.cherry_blossom_door": "Cherry Blossom Door",
+  "block.onemillionbananas.cherry_blossom_trapdoor": "Cherry Blossom Trapdoor",
+
 
   "itemGroup.coursemodtag": "OMB Mod",
   "item.onemillionbananas.dowsing_rod.no_valuables": "No valuable ore found",
