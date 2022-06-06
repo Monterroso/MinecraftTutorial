@@ -4,6 +4,7 @@ import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.lordoflizardz.onemillionbananas.block.custom.SpeedyBlock;
 import net.lordoflizardz.onemillionbananas.item.ModCreativeModeTab;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
+import net.lordoflizardz.onemillionbananas.item.ModTiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.*;
