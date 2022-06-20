@@ -3,6 +3,7 @@ package net.lordoflizardz.onemillionbananas.item;
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.lordoflizardz.onemillionbananas.item.custom.CoalSliverItem;
 import net.lordoflizardz.onemillionbananas.item.custom.DowsingRodItem;
+import net.lordoflizardz.onemillionbananas.item.custom.PaxelItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -46,6 +47,10 @@ public class ModItem {
 
     public static final RegistryObject<Item> COBALT_HOE = ITEMS.register("cobalt_hoe",
             () -> new HoeItem(ModTiers.COBALT, 0, 0f,
+                    new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
+
+    public static final RegistryObject<Item> COBALT_PAXEL = ITEMS.register("cobalt_paxel",
+            () -> new PaxelItem(ModTiers.COBALT, 0, 0f,
                     new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
 
     public static void register(IEventBus eventBus) {
