@@ -3,6 +3,7 @@ package net.lordoflizardz.onemillionbananas.item;
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.lordoflizardz.onemillionbananas.item.custom.CoalSliverItem;
 import net.lordoflizardz.onemillionbananas.item.custom.DowsingRodItem;
+import net.lordoflizardz.onemillionbananas.item.custom.LevitationSwordItem;
 import net.lordoflizardz.onemillionbananas.item.custom.PaxelItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -30,7 +31,7 @@ public class ModItem {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB).food(ModFood.TURNIP)));
 
     public static final RegistryObject<Item> COBALT_SWORD = ITEMS.register("cobalt_sword",
-            () -> new SwordItem(ModTiers.COBALT, 2, 3f,
+            () -> new LevitationSwordItem(ModTiers.COBALT, 2, 3f,
                     new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
 
     public static final RegistryObject<Item> COBALT_PICKAXE = ITEMS.register("cobalt_pickaxe",
