@@ -1,10 +1,7 @@
 package net.lordoflizardz.onemillionbananas.item;
 
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
-import net.lordoflizardz.onemillionbananas.item.custom.CoalSliverItem;
-import net.lordoflizardz.onemillionbananas.item.custom.DowsingRodItem;
-import net.lordoflizardz.onemillionbananas.item.custom.LevitationSwordItem;
-import net.lordoflizardz.onemillionbananas.item.custom.PaxelItem;
+import net.lordoflizardz.onemillionbananas.item.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -56,7 +53,7 @@ public class ModItem {
                     new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
 
     public static final RegistryObject<Item> COBALT_HELMET = ITEMS.register("cobalt_helmet",
-            () -> new ArmorItem(ModArmorMaterials.COBALT, EquipmentSlot.HEAD,
+            () -> new ModArmorItem(ModArmorMaterials.COBALT, EquipmentSlot.HEAD,
                     new Item.Properties().tab(ModCreativeModeTab.COURSE_TAB)));
 
     public static final RegistryObject<Item> COBALT_CHESTPLATE = ITEMS.register("cobalt_chestplate",
