@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas;
 
 import net.lordoflizardz.onemillionbananas.block.ModBlocks;
+import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -31,6 +32,8 @@ public class OneMillionBananas
         ModBlocks.register(eventBus);
 
         ModTags.register();
+
+        ModEnchantments.register(eventBus);
 
         eventBus.addListener(this::clientSetup);
 
