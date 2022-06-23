@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "onemillionbananas:block/cobalt_lamp_off"
+    },
+    "clicked=true": {
+      "model": "onemillionbananas:block/cobalt_lamp_on"
+    }
+  }
+}

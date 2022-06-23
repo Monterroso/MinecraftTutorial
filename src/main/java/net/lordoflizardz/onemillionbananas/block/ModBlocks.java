@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas.block;
 
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
+import net.lordoflizardz.onemillionbananas.block.custom.CobaltLampBlock;
 import net.lordoflizardz.onemillionbananas.block.custom.SpeedyBlock;
 import net.lordoflizardz.onemillionbananas.item.ModCreativeModeTab;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
@@ -69,6 +70,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CHERRY_BLOSSOM_TRAPDOOR = registerBlock("cherry_blossom_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(3f).requiresCorrectToolForDrops().noOcclusion()), ModCreativeModeTab.COURSE_TAB);
+
+    public static final RegistryObject<Block> COBALT_LAMP_BLOCK = registerBlock("cobalt_lamp",
+            () -> new CobaltLampBlock(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(3f).requiresCorrectToolForDrops()
+                    .lightLevel((state) -> state.getValue(CobaltLampBlock.CLICKED) ? 15 : 0)
+                    .noOcclusion()), ModCreativeModeTab.COURSE_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, String tooltipKey) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
