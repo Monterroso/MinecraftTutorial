@@ -3,6 +3,7 @@ package net.lordoflizardz.onemillionbananas;
 import net.lordoflizardz.onemillionbananas.block.ModBlocks;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
+import net.lordoflizardz.onemillionbananas.util.ModItemProperties;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -44,6 +45,8 @@ public class OneMillionBananas
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_TRAPDOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_DOOR.get(), RenderType.cutout());
+
+        ModItemProperties.addCustomItemProperties();
     }
 
     private void setup(final FMLCommonSetupEvent event)

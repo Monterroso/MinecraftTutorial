@@ -2,5 +2,13 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "onemillionbananas:item/data_tablet_off"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "onemillionbananas:on":  1
+      },
+      "model": "onemillionbananas:item/data_tablet_on"
+    }
+  ]
 }
