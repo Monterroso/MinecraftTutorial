@@ -1,8 +1,11 @@
 package net.lordoflizardz.onemillionbananas.item.custom;
 
+import net.lordoflizardz.onemillionbananas.item.ModItem;
+import net.lordoflizardz.onemillionbananas.util.InventoryUtil;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -36,6 +39,10 @@ public class DowsingRodItem extends Item {
                 if (isValuableBlock(blockBelow)) {
                     outputValuableCoordinates(positionClicked.below(i), player, blockBelow);
                     foundBlock = true;
+
+                    if (InventoryUtil.hasPlayerStackInInventory(player, ModItem.DATA_TABLET.get(), true)) {
+                        this.addNbtToDataTablet(player, positionClicked.below(i), blockBelow);
+                    }
                     break;
                 }
             }
@@ -60,9 +67,22 @@ public class DowsingRodItem extends Item {
         }
     }
 
+    private void addNbtToDataTablet(Player player, BlockPos blockPos, Block blockBelow) {
+        ItemStack dataTablet = player.getInventory().getItem(InventoryUtil.getFirstInventoryIndex(player, ModItem.DATA_TABLET.get(), true));
+
+        CompoundTag nbtData = new CompoundTag();
+        nbtData.putString("onemillionbananas.last_ore", getText(blockPos, blockBelow));
+
+        dataTablet.setTag(nbtData);
+    }
+
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block blockBelow) {
-        player.sendMessage(new TextComponent(String.format("Found %s at (%d, %d, %d)",
-                blockBelow.asItem().getRegistryName().toString(), blockPos.getX(), blockPos.getY(), blockPos.getZ())), player.getUUID());
+        player.sendMessage(new TextComponent(this.getText(blockPos, blockBelow)), player.getUUID());
+    }
+
+    private String getText(BlockPos blockPos, Block blockBelow) {
+        return String.format("Found %s at (%d, %d, %d)",
+                blockBelow.asItem().getRegistryName().toString(), blockPos.getX(), blockPos.getY(), blockPos.getZ());
     }
 
     private boolean isValuableBlock(Block block) {
