@@ -9,5 +9,8 @@ public class ModItemProperties {
     public static void addCustomItemProperties() {
         ItemProperties.register(ModItem.DATA_TABLET.get(), new ResourceLocation(OneMillionBananas.MOD_ID, "on"),
                 ((pStack, pLevel, pEntity, pSeed) -> pStack.hasTag() ? 1f : 0f));
+        ItemProperties.register(ModItem.DOWSING_ROD.get(), new ResourceLocation(OneMillionBananas.MOD_ID, "divine"),
+                ((pStack, pLevel, pEntity, pSeed) -> !pStack.getTag().getString("onemillionbananas.found").isEmpty() ? 1f : 0f));
     }
+
 }

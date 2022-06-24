@@ -6,7 +6,7 @@
   "overrides": [
     {
       "predicate": {
-        "onemillionbananas:on":  1
+        "onemillionbananas:on": 1
       },
       "model": "onemillionbananas:item/data_tablet_on"
     }
