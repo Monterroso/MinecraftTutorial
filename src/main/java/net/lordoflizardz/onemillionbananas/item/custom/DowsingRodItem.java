@@ -43,6 +43,10 @@ public class DowsingRodItem extends Item {
                     if (InventoryUtil.hasPlayerStackInInventory(player, ModItem.DATA_TABLET.get(), true)) {
                         this.addNbtToDataTablet(player, positionClicked.below(i), blockBelow);
                     }
+
+                    CompoundTag nbtData = new CompoundTag();
+                    nbtData.putString("onemillionbananas.found", blockBelow.toString());
+                    pContext.getItemInHand().setTag(nbtData);
                     break;
                 }
             }
@@ -64,6 +68,11 @@ public class DowsingRodItem extends Item {
             pTooltipComponents.add(new TranslatableComponent("tooltip.onemillionbananas.dousing_rod.tooltip.shift"));
         } else {
             pTooltipComponents.add(new TranslatableComponent("tooltip.onemillionbananas.dousing_rod.tooltip"));
+        }
+
+        if (pStack.hasTag() && !pStack.getTag().getString("onemillionbananas.found").isEmpty()) {
+            String oreFound = pStack.getTag().getString("onemillionbananas.found");
+            pTooltipComponents.add(new TextComponent(oreFound));
         }
     }
 

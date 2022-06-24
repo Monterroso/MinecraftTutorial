@@ -2,5 +2,13 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "onemillionbananas:item/dowsing_rod"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "onemillionbananas:divine": 1
+      },
+      "model": "onemillionbananas:item/dowsing_rod_divine"
+    }
+  ]
 }

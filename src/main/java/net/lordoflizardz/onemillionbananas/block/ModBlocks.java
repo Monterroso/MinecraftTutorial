@@ -39,7 +39,8 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB);
 
     public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
-            () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB,
+            () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.METAL).strength(5f)
+                .lightLevel((state) -> state.getValue(SpeedyBlock.ON) ? 15 : 0).requiresCorrectToolForDrops()), ModCreativeModeTab.COURSE_TAB,
             "tooltip.onemillionbananas.speedy_block.tooltip");
 
     public static final RegistryObject<Block> COBALT_STAIRS = registerBlock("cobalt_stairs",

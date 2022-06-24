@@ -1,5 +1,6 @@
 {
   "variants": {
-    "": {"model":  "onemillionbananas:block/speedy_block"}
+    "on=true": {"model":  "onemillionbananas:block/speedy_block_on"},
+    "on=false": {"model":  "onemillionbananas:block/speedy_block_off"}
   }
 }
