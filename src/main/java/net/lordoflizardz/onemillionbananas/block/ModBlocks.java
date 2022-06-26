@@ -3,6 +3,7 @@ package net.lordoflizardz.onemillionbananas.block;
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.lordoflizardz.onemillionbananas.block.custom.CobaltLampBlock;
 import net.lordoflizardz.onemillionbananas.block.custom.SpeedyBlock;
+import net.lordoflizardz.onemillionbananas.block.custom.TurnipCropBlock;
 import net.lordoflizardz.onemillionbananas.item.ModCreativeModeTab;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.item.ModTiers;
@@ -77,6 +78,9 @@ public class ModBlocks {
                     .strength(3f).requiresCorrectToolForDrops()
                     .lightLevel((state) -> state.getValue(CobaltLampBlock.CLICKED) ? 15 : 0)
                     .noOcclusion()), ModCreativeModeTab.COURSE_TAB);
+
+    public static final RegistryObject<Block> TURNIP_CROP = BLOCKS.register("turnip_crop",
+            () -> new TurnipCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS).noCollission().noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, String tooltipKey) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
