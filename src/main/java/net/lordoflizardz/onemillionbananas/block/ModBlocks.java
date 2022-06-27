@@ -7,6 +7,7 @@ import net.lordoflizardz.onemillionbananas.block.custom.TurnipCropBlock;
 import net.lordoflizardz.onemillionbananas.item.ModCreativeModeTab;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.item.ModTiers;
+import net.lordoflizardz.onemillionbananas.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.effect.MobEffects;
@@ -76,7 +77,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> COBALT_LAMP_BLOCK = registerBlock("cobalt_lamp",
             () -> new CobaltLampBlock(BlockBehaviour.Properties.of(Material.WOOD)
-                    .strength(3f).requiresCorrectToolForDrops()
+                    .strength(3f).requiresCorrectToolForDrops().sound(ModSounds.COBALT_LAMP_SOUNDS)
                     .lightLevel((state) -> state.getValue(CobaltLampBlock.CLICKED) ? 15 : 0)
                     .noOcclusion()), ModCreativeModeTab.COURSE_TAB);
 
