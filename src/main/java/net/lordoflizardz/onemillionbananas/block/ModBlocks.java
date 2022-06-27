@@ -86,6 +86,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> PINK_ROSE = registerBlock("pink_rose",
             () -> new FlowerBlock(MobEffects.BLINDNESS, 100, BlockBehaviour.Properties.copy(Blocks.SUNFLOWER)), ModCreativeModeTab.COURSE_TAB);
 
+    public static final RegistryObject<Block> POTTED_PINK_ROSE = BLOCKS.register("potted_pink_rose",
+            () -> new FlowerPotBlock(null, ModBlocks.PINK_ROSE, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, String tooltipKey) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab, tooltipKey);
