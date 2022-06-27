@@ -8,6 +8,7 @@ import net.lordoflizardz.onemillionbananas.util.ModTags;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -37,6 +38,7 @@ public class OneMillionBananas
         ModEnchantments.register(eventBus);
 
         eventBus.addListener(this::clientSetup);
+        eventBus.addListener(this::setup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -52,9 +54,10 @@ public class OneMillionBananas
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        event.enqueueWork(() -> {
+            ComposterBlock.COMPOSTABLES.put(ModItem.TURNIP_SEEDS.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(ModItem.TURNIP.get(), 0.65f);
+        });
     }
 
 
