@@ -9,6 +9,7 @@ import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.item.ModTiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -81,6 +82,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> TURNIP_CROP = BLOCKS.register("turnip_crop",
             () -> new TurnipCropBlock(BlockBehaviour.Properties.copy(Blocks.BEETROOTS).noCollission().noOcclusion()));
+
+    public static final RegistryObject<Block> PINK_ROSE = registerBlock("pink_rose",
+            () -> new FlowerBlock(MobEffects.BLINDNESS, 100, BlockBehaviour.Properties.copy(Blocks.SUNFLOWER)), ModCreativeModeTab.COURSE_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, String tooltipKey) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
