@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -49,6 +50,7 @@ public class OneMillionBananas
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_BLOSSOM_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.TURNIP_CROP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_ROSE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_PINK_ROSE.get(), RenderType.cutout());
 
 
         ModItemProperties.addCustomItemProperties();
@@ -59,6 +61,8 @@ public class OneMillionBananas
         event.enqueueWork(() -> {
             ComposterBlock.COMPOSTABLES.put(ModItem.TURNIP_SEEDS.get(), 0.3f);
             ComposterBlock.COMPOSTABLES.put(ModItem.TURNIP.get(), 0.65f);
+
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.PINK_ROSE.getId(), ModBlocks.POTTED_PINK_ROSE);
         });
     }
 
