@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas.item.custom;
 
 import net.lordoflizardz.onemillionbananas.item.ModItem;
+import net.lordoflizardz.onemillionbananas.sound.ModSounds;
 import net.lordoflizardz.onemillionbananas.util.InventoryUtil;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
 import net.minecraft.client.gui.screens.Screen;
@@ -9,6 +10,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -43,6 +45,9 @@ public class DowsingRodItem extends Item {
                     if (InventoryUtil.hasPlayerStackInInventory(player, ModItem.DATA_TABLET.get(), true)) {
                         this.addNbtToDataTablet(player, positionClicked.below(i), blockBelow);
                     }
+
+                    pContext.getLevel().playSound(player, positionClicked, ModSounds.DOWSING_ROD_FOUND_ORE.get(),
+                            SoundSource.BLOCKS, 1f, 1f);
 
                     CompoundTag nbtData = new CompoundTag();
                     nbtData.putString("onemillionbananas.found", blockBelow.toString());

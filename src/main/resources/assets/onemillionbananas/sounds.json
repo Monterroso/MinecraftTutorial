@@ -1,0 +1,8 @@
+{
+  "dowsing_rod_found_ore": {
+    "subtitle": "onemillionbananas.dowsing_rod_found_ore",
+    "sounds": [
+      "onemillionbananas:dowsing_rod_found_ore"
+    ]
+  }
+}
