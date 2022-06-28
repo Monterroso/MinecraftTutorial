@@ -1,0 +1,6 @@
+{
+    "parent": "onemillionbananas:item/cobalt_bow",
+    "textures": {
+        "layer0": "onemillionbananas:item/cobalt_bow_pulling_1"
+    }
+}
