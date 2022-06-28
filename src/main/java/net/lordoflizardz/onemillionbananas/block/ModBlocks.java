@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas.block;
 
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
+import net.lordoflizardz.onemillionbananas.block.custom.CobaltBlasterBlock;
 import net.lordoflizardz.onemillionbananas.block.custom.CobaltLampBlock;
 import net.lordoflizardz.onemillionbananas.block.custom.SpeedyBlock;
 import net.lordoflizardz.onemillionbananas.block.custom.TurnipCropBlock;
@@ -89,6 +90,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> POTTED_PINK_ROSE = BLOCKS.register("potted_pink_rose",
             () -> new FlowerPotBlock(null, ModBlocks.PINK_ROSE, BlockBehaviour.Properties.copy(Blocks.POTTED_DANDELION)));
+
+    public static final RegistryObject<Block> COBALT_BLASTER = registerBlock("cobalt_blaster",
+            () -> new CobaltBlasterBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), ModCreativeModeTab.COURSE_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, String tooltipKey) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

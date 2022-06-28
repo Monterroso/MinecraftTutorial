@@ -19,6 +19,7 @@
   "item.onemillionbananas.turnip_seeds": "Turnip Seeds",
   "item.onemillionbananas.bar_brawl_music_disk": "Bar Brawl Music Disc",
   "item.onemillionbananas.bar_brawl_music_disk.desc": "Bryan Tech - Bar Brawl (CC0)",
+  "item.onemillionbananas.cobalt_blaster": "Cobalt Blaster",
 
 
   "block.onemillionbananas.cobalt_block": "Cobalt Block",
@@ -39,6 +40,8 @@
   "block.onemillionbananas.turnip_crop": "Turnip Crop",
   "block.onemillionbananas.pink_rose": "Pink Rose",
   "block.onemillionbananas.potted_pink_rose": "Potted Pink Rose",
+  "block.onemillionbananas.cobalt_blaster": "Cobalt Blaster",
+
 
   "enchantment.onemillionbananas.lightning_striker": "Lightning Striker",
 
