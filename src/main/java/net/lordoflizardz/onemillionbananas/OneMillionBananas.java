@@ -3,6 +3,7 @@ package net.lordoflizardz.onemillionbananas;
 import net.lordoflizardz.onemillionbananas.block.ModBlocks;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
+import net.lordoflizardz.onemillionbananas.painting.ModPaintings;
 import net.lordoflizardz.onemillionbananas.sound.ModSounds;
 import net.lordoflizardz.onemillionbananas.util.ModItemProperties;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
@@ -40,6 +41,8 @@ public class OneMillionBananas
         ModSounds.register(eventBus);
 
         ModEnchantments.register(eventBus);
+
+        ModPaintings.register(eventBus);
 
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
