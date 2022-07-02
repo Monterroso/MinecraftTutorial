@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "block_state_property",
+      "block": "minecraft:grass"
+    }
+  ],
+  "addition": "onemillionbananas:turnip_seeds",
+  "type": "onemillionbananas:turnip_seeds_from_grass"
+}
