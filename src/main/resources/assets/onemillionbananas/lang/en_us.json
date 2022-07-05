@@ -22,6 +22,7 @@
   "item.onemillionbananas.cobalt_blaster": "Cobalt Blaster",
   "item.onemillionbananas.cobalt_staff": "Cobalt Staff",
   "item.onemillionbananas.cobalt_bow": "Cobalt Bow",
+  "item.onemillionbananas.honey_bucket": "Honey Bucket",
 
 
   "block.onemillionbananas.cobalt_block": "Cobalt Block",
@@ -43,6 +44,8 @@
   "block.onemillionbananas.pink_rose": "Pink Rose",
   "block.onemillionbananas.potted_pink_rose": "Potted Pink Rose",
   "block.onemillionbananas.cobalt_blaster": "Cobalt Blaster",
+  "block.onemillionbananas.honey_flowing": "Honey Flowing",
+  "block.onemillionbananas.honey_fluid": "Honey Fluid",
 
 
   "enchantment.onemillionbananas.lightning_striker": "Lightning Striker",

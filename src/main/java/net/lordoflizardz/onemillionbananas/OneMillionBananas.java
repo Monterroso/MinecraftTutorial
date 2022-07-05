@@ -2,6 +2,7 @@ package net.lordoflizardz.onemillionbananas;
 
 import net.lordoflizardz.onemillionbananas.block.ModBlocks;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
+import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.painting.ModPaintings;
 import net.lordoflizardz.onemillionbananas.sound.ModSounds;
@@ -44,6 +45,8 @@ public class OneMillionBananas
 
         ModPaintings.register(eventBus);
 
+        ModFluids.register(eventBus);
+
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
 
@@ -58,6 +61,10 @@ public class OneMillionBananas
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.PINK_ROSE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_PINK_ROSE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.COBALT_BLASTER.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLUID.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(ModFluids.HONEY_FLOWING.get(), RenderType.translucent());
 
 
         ModItemProperties.addCustomItemProperties();
