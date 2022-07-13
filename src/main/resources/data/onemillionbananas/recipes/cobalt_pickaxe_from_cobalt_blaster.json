@@ -1,0 +1,14 @@
+{
+  "type": "onemillionbananas:cobalt_blasting",
+  "ingredients": [
+    {
+      "item": "minecraft:golden_pickaxe"
+    },
+    {
+      "item": "onemillionbananas:cobalt_ingot"
+    }
+  ],
+  "output": {
+    "item": "onemillionbananas:cobalt_pickaxe"
+  }
+}

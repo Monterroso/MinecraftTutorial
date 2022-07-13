@@ -6,6 +6,7 @@ import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.painting.ModPaintings;
+import net.lordoflizardz.onemillionbananas.recipe.ModRecipes;
 import net.lordoflizardz.onemillionbananas.screen.CobaltBlasterScreen;
 import net.lordoflizardz.onemillionbananas.screen.ModMenuTypes;
 import net.lordoflizardz.onemillionbananas.sound.ModSounds;
@@ -54,6 +55,8 @@ public class OneMillionBananas
         ModBlockEntities.register(eventBus);
 
         ModMenuTypes.register(eventBus);
+
+        ModRecipes.register(eventBus);
 
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
