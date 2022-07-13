@@ -1,13 +1,17 @@
 package net.lordoflizardz.onemillionbananas;
 
 import net.lordoflizardz.onemillionbananas.block.ModBlocks;
+import net.lordoflizardz.onemillionbananas.block.entity.ModBlockEntities;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.painting.ModPaintings;
+import net.lordoflizardz.onemillionbananas.screen.CobaltBlasterScreen;
+import net.lordoflizardz.onemillionbananas.screen.ModMenuTypes;
 import net.lordoflizardz.onemillionbananas.sound.ModSounds;
 import net.lordoflizardz.onemillionbananas.util.ModItemProperties;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Blocks;
@@ -47,6 +51,10 @@ public class OneMillionBananas
 
         ModFluids.register(eventBus);
 
+        ModBlockEntities.register(eventBus);
+
+        ModMenuTypes.register(eventBus);
+
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
 
@@ -68,6 +76,8 @@ public class OneMillionBananas
 
 
         ModItemProperties.addCustomItemProperties();
+
+        MenuScreens.register(ModMenuTypes.COBALT_BLASTER_MENU.get(), CobaltBlasterScreen::new);
     }
 
     private void setup(final FMLCommonSetupEvent event)
