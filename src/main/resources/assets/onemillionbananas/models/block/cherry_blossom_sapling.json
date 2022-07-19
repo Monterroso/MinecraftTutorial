@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "onemillionbananas:block/cherry_blossom_sapling"
+  }
+}
