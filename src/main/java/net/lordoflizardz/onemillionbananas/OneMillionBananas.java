@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas;
 
 import net.lordoflizardz.onemillionbananas.block.ModBlocks;
+import net.lordoflizardz.onemillionbananas.block.ModWoodTypes;
 import net.lordoflizardz.onemillionbananas.block.entity.ModBlockEntities;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
@@ -15,9 +16,13 @@ import net.lordoflizardz.onemillionbananas.util.ModTags;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -81,6 +86,8 @@ public class OneMillionBananas
         ModItemProperties.addCustomItemProperties();
 
         MenuScreens.register(ModMenuTypes.COBALT_BLASTER_MENU.get(), CobaltBlasterScreen::new);
+
+        WoodType.register(ModWoodTypes.CHERRY_BLOSSOM);
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -91,6 +98,9 @@ public class OneMillionBananas
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.PINK_ROSE.getId(), ModBlocks.POTTED_PINK_ROSE);
         });
+
+        BlockEntityRenderers.register(ModBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+        Sheets.addWoodType(ModWoodTypes.CHERRY_BLOSSOM);
     }
 
 
