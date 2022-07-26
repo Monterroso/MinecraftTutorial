@@ -2,9 +2,14 @@ package net.lordoflizardz.onemillionbananas.event;
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.lordoflizardz.onemillionbananas.command.ReturnHomeCommand;
 import net.lordoflizardz.onemillionbananas.command.SetHomeCommand;
+import net.lordoflizardz.onemillionbananas.util.KaupenTitleScreen;
+import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.ScreenOpenEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -40,6 +45,14 @@ public class ModEvents {
                     event.getEntityLiving().setSecondsOnFire(2);
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    @OnlyIn(Dist.CLIENT)
+    public static void openGui(ScreenOpenEvent event) {
+        if (event.getScreen() instanceof TitleScreen && !(event.getScreen() instanceof KaupenTitleScreen)) {
+            event.setScreen(new KaupenTitleScreen());
         }
     }
 }
