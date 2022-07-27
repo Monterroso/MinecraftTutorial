@@ -2,6 +2,7 @@ package net.lordoflizardz.onemillionbananas.event;
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.lordoflizardz.onemillionbananas.command.ReturnHomeCommand;
 import net.lordoflizardz.onemillionbananas.command.SetHomeCommand;
+import net.lordoflizardz.onemillionbananas.config.OneMillionBananasClientConfigs;
 import net.lordoflizardz.onemillionbananas.util.KaupenTitleScreen;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -51,7 +52,8 @@ public class ModEvents {
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public static void openGui(ScreenOpenEvent event) {
-        if (event.getScreen() instanceof TitleScreen && !(event.getScreen() instanceof KaupenTitleScreen)) {
+        if (OneMillionBananasClientConfigs.CUSTOM_TITLE_SCREEN.get() &&
+                event.getScreen() instanceof TitleScreen && !(event.getScreen() instanceof KaupenTitleScreen)) {
             event.setScreen(new KaupenTitleScreen());
         }
     }
