@@ -66,5 +66,7 @@
 
   "tooltip.onemillionbananas.dousing_rod.tooltip.shift": "Right click to find valuables",
   "tooltip.onemillionbananas.dousing_rod.tooltip": "Press §eSHIFT§r for hint",
-  "tooltip.onemillionbananas.speedy_block.tooltip": "Zoom zoom!"
+  "tooltip.onemillionbananas.speedy_block.tooltip": "Zoom zoom!",
+
+  "effect.onemillionbananas.freeze": "Freeze"
 }

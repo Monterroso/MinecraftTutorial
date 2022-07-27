@@ -5,6 +5,7 @@ import net.lordoflizardz.onemillionbananas.block.ModWoodTypes;
 import net.lordoflizardz.onemillionbananas.block.entity.ModBlockEntities;
 import net.lordoflizardz.onemillionbananas.config.OneMillionBananasClientConfigs;
 import net.lordoflizardz.onemillionbananas.config.OneMillionBananasCommonConfigs;
+import net.lordoflizardz.onemillionbananas.effect.ModEffects;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
@@ -66,6 +67,8 @@ public class OneMillionBananas
         ModMenuTypes.register(eventBus);
 
         ModRecipes.register(eventBus);
+
+        ModEffects.register(eventBus);
 
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
