@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas.world.feature;
 
 import net.lordoflizardz.onemillionbananas.block.ModBlocks;
+import net.lordoflizardz.onemillionbananas.config.OneMillionBananasCommonConfigs;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.util.valueproviders.ConstantInt;
@@ -41,5 +42,5 @@ public class ModConfiguredFeature {
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_COBALT_ORE.get().defaultBlockState()));
 
     public static final ConfiguredFeature<?, ?> COBALT_ORE = FeatureUtils.register("cobalt_ore",
-            Feature.ORE.configured(new OreConfiguration(OVERWORLD_COBALT_ORES, 30)));
+            Feature.ORE.configured(new OreConfiguration(OVERWORLD_COBALT_ORES, OneMillionBananasCommonConfigs.COBALT_ORE_VEIN_SIZE.get())));
 }

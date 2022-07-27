@@ -3,6 +3,8 @@ package net.lordoflizardz.onemillionbananas;
 import net.lordoflizardz.onemillionbananas.block.ModBlocks;
 import net.lordoflizardz.onemillionbananas.block.ModWoodTypes;
 import net.lordoflizardz.onemillionbananas.block.entity.ModBlockEntities;
+import net.lordoflizardz.onemillionbananas.config.OneMillionBananasClientConfigs;
+import net.lordoflizardz.onemillionbananas.config.OneMillionBananasCommonConfigs;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
@@ -25,7 +27,9 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -65,6 +69,9 @@ public class OneMillionBananas
 
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, OneMillionBananasClientConfigs.SPEC, "onemillionbananas-client.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, OneMillionBananasCommonConfigs.SPEC, "onemillionbananas-common.toml");
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
