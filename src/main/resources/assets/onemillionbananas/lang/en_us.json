@@ -25,6 +25,9 @@
   "item.onemillionbananas.cobalt_bow": "Cobalt Bow",
   "item.onemillionbananas.honey_bucket": "Honey Bucket",
   "item.onemillionbananas.magic_dust": "Magic Dust",
+  "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",
+  "item.minecraft.splash_potion.effect.freeze_potion": "Splash Potion of Freeze",
+  "item.minecraft.lingering_potion.effect.freeze_potion": "Lingering Potion of Freeze",
 
 
   "block.onemillionbananas.cobalt_block": "Cobalt Block",

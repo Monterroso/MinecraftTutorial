@@ -10,10 +10,12 @@ import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.painting.ModPaintings;
+import net.lordoflizardz.onemillionbananas.potion.ModPotions;
 import net.lordoflizardz.onemillionbananas.recipe.ModRecipes;
 import net.lordoflizardz.onemillionbananas.screen.CobaltBlasterScreen;
 import net.lordoflizardz.onemillionbananas.screen.ModMenuTypes;
 import net.lordoflizardz.onemillionbananas.sound.ModSounds;
+import net.lordoflizardz.onemillionbananas.util.BetterBrewingRecipe;
 import net.lordoflizardz.onemillionbananas.util.ModItemProperties;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -22,11 +24,13 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -69,6 +73,8 @@ public class OneMillionBananas
         ModRecipes.register(eventBus);
 
         ModEffects.register(eventBus);
+
+        ModPotions.register(eventBus);
 
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
@@ -114,6 +120,9 @@ public class OneMillionBananas
 
         BlockEntityRenderers.register(ModBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
         Sheets.addWoodType(ModWoodTypes.CHERRY_BLOSSOM);
+
+        BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
+                ModItem.COBALT_INGOT.get(), ModPotions.FREEZE_POTION.get()));
     }
 
 
