@@ -7,6 +7,8 @@ import net.lordoflizardz.onemillionbananas.config.OneMillionBananasClientConfigs
 import net.lordoflizardz.onemillionbananas.config.OneMillionBananasCommonConfigs;
 import net.lordoflizardz.onemillionbananas.effect.ModEffects;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
+import net.lordoflizardz.onemillionbananas.entity.ModEntityTypes;
+import net.lordoflizardz.onemillionbananas.entity.client.RaccoonRenderer;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.painting.ModPaintings;
@@ -24,6 +26,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -40,6 +43,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(OneMillionBananas.MOD_ID)
@@ -76,6 +80,10 @@ public class OneMillionBananas
 
         ModPotions.register(eventBus);
 
+        ModEntityTypes.register(eventBus);
+
+        GeckoLib.initialize();
+
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
 
@@ -107,6 +115,8 @@ public class OneMillionBananas
         MenuScreens.register(ModMenuTypes.COBALT_BLASTER_MENU.get(), CobaltBlasterScreen::new);
 
         WoodType.register(ModWoodTypes.CHERRY_BLOSSOM);
+
+        EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
     }
 
     private void setup(final FMLCommonSetupEvent event)
