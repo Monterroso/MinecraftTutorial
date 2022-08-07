@@ -9,6 +9,7 @@ import net.lordoflizardz.onemillionbananas.effect.ModEffects;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.entity.ModEntityTypes;
 import net.lordoflizardz.onemillionbananas.entity.client.RaccoonRenderer;
+import net.lordoflizardz.onemillionbananas.entity.client.TigerRenderer;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.painting.ModPaintings;
@@ -117,6 +118,8 @@ public class OneMillionBananas
         WoodType.register(ModWoodTypes.CHERRY_BLOSSOM);
 
         EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
+        EntityRenderers.register(ModEntityTypes.TIGER.get(), TigerRenderer::new);
+
     }
 
     private void setup(final FMLCommonSetupEvent event)

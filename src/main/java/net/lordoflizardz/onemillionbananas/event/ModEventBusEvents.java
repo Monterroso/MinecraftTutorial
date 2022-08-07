@@ -2,6 +2,7 @@ package net.lordoflizardz.onemillionbananas.event;
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.lordoflizardz.onemillionbananas.entity.ModEntityTypes;
 import net.lordoflizardz.onemillionbananas.entity.custom.RaccoonEntity;
+import net.lordoflizardz.onemillionbananas.entity.custom.TigerEntity;
 import net.lordoflizardz.onemillionbananas.event.loot.DowsingRodInIglooAdditionModifier;
 import net.lordoflizardz.onemillionbananas.event.loot.TurnipSeedsFromGrassAdditionModifier;
 import net.minecraft.resources.ResourceLocation;
@@ -29,5 +30,6 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
+        event.put(ModEntityTypes.TIGER.get(), TigerEntity.setAttributes());
     }
 }

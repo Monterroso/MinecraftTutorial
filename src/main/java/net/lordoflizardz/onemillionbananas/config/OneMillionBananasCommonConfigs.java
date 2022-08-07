@@ -10,7 +10,7 @@ public class OneMillionBananasCommonConfigs {
     public static final ForgeConfigSpec.ConfigValue<Integer> COBALT_ORE_VEIN_SIZE;
 
     static {
-        BUILDER.push("Configs for MCCourseMod");
+        BUILDER.push("Configs for OneMillionBananas");
 
         COBALT_ORE_VEINS_PER_CHUNK = BUILDER.comment("How many Cobalt Ore Veins spawn per chunk!")
                 .defineInRange("Veins Per Chunk", 7, 1, 10);
