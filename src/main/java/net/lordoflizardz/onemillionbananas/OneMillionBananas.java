@@ -8,6 +8,7 @@ import net.lordoflizardz.onemillionbananas.config.OneMillionBananasCommonConfigs
 import net.lordoflizardz.onemillionbananas.effect.ModEffects;
 import net.lordoflizardz.onemillionbananas.enchantment.ModEnchantments;
 import net.lordoflizardz.onemillionbananas.entity.ModEntityTypes;
+import net.lordoflizardz.onemillionbananas.entity.client.ModBoatRenderer;
 import net.lordoflizardz.onemillionbananas.entity.client.RaccoonRenderer;
 import net.lordoflizardz.onemillionbananas.entity.client.TigerRenderer;
 import net.lordoflizardz.onemillionbananas.fluid.ModFluids;
@@ -119,6 +120,7 @@ public class OneMillionBananas
 
         EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
         EntityRenderers.register(ModEntityTypes.TIGER.get(), TigerRenderer::new);
+        EntityRenderers.register(ModEntityTypes.BOAT_ENTITY.get(), ModBoatRenderer::new);
 
     }
 
