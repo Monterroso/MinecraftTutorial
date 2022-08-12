@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas.world;
 
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
+import net.lordoflizardz.onemillionbananas.world.gen.ModEntityGeneration;
 import net.lordoflizardz.onemillionbananas.world.gen.ModFlowerGeneration;
 import net.lordoflizardz.onemillionbananas.world.gen.ModOreGeneration;
 import net.lordoflizardz.onemillionbananas.world.gen.ModTreeGeneration;
@@ -16,5 +17,7 @@ public class ModWorldEvents {
 
         ModTreeGeneration.generateTrees(event);
         ModFlowerGeneration.generateFlowers(event);
+
+        ModEntityGeneration.onEntitySpawn(event);
     }
 }
