@@ -5,7 +5,10 @@ import net.lordoflizardz.onemillionbananas.entity.custom.RaccoonEntity;
 import net.lordoflizardz.onemillionbananas.entity.custom.TigerEntity;
 import net.lordoflizardz.onemillionbananas.event.loot.DowsingRodInIglooAdditionModifier;
 import net.lordoflizardz.onemillionbananas.event.loot.TurnipSeedsFromGrassAdditionModifier;
+import net.lordoflizardz.onemillionbananas.recipe.CobaltBlasterRecipe;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -31,5 +34,12 @@ public class ModEventBusEvents {
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(ModEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
         event.put(ModEntityTypes.TIGER.get(), TigerEntity.setAttributes());
+    }
+
+
+    @SubscribeEvent
+    public static void registerRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>> event) {
+        Registry.register(Registry.RECIPE_TYPE, CobaltBlasterRecipe.Type.ID, CobaltBlasterRecipe.Type.INSTANCE);
+
     }
 }

@@ -1,6 +1,7 @@
 package net.lordoflizardz.onemillionbananas.world.gen;
 
 import net.lordoflizardz.onemillionbananas.world.feature.ModPlacedFeatures;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
@@ -20,10 +21,10 @@ public class ModTreeGeneration {
 
 
         if (types.contains(BiomeDictionary.Type.PLAINS)) {
-            List<Supplier<PlacedFeature>> base =
+            List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
-            base.add(() -> ModPlacedFeatures.CHERRY_BLOSSOM_PLACED);
+            base.add(ModPlacedFeatures.CHERRY_BLOSSOM_PLACED);
         }
     }
 }

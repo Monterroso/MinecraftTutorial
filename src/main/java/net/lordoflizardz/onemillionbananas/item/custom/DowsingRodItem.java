@@ -7,6 +7,7 @@ import net.lordoflizardz.onemillionbananas.util.ModTags;
 import net.minecraft.Util;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.ChatType;
 import net.minecraft.network.chat.Component;
@@ -22,6 +23,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,14 +42,14 @@ public class DowsingRodItem extends Item {
             boolean foundBlock = false;
 
             for(int i = 0; i <= positionClicked.getY() + 64; i++) {
-                Block blockBelow = pContext.getLevel().getBlockState(positionClicked.below(i)).getBlock();
+                BlockState blockBelow = pContext.getLevel().getBlockState(positionClicked.below(i));
 
                 if (isValuableBlock(blockBelow)) {
-                    outputValuableCoordinates(positionClicked.below(i), player, blockBelow);
+                    outputValuableCoordinates(positionClicked.below(i), player, blockBelow.getBlock());
                     foundBlock = true;
 
                     if (InventoryUtil.hasPlayerStackInInventory(player, ModItem.DATA_TABLET.get(), true)) {
-                        this.addNbtToDataTablet(player, positionClicked.below(i), blockBelow);
+                        this.addNbtToDataTablet(player, positionClicked.below(i), blockBelow.getBlock());
                     }
 
                     pContext.getLevel().playSound(player, positionClicked, ModSounds.DOWSING_ROD_FOUND_ORE.get(),
@@ -108,7 +110,7 @@ public class DowsingRodItem extends Item {
                 blockBelow.asItem().getRegistryName().toString(), blockPos.getX(), blockPos.getY(), blockPos.getZ());
     }
 
-    private boolean isValuableBlock(Block block) {
-        return ModTags.Blocks.DOWSING_ROD_VALUABLES.contains(block);
+    private boolean isValuableBlock(BlockState state) {
+        return state.is(ModTags.Blocks.DOWSING_ROD_VALUABLES);
     }
 }
