@@ -22,6 +22,7 @@ import net.lordoflizardz.onemillionbananas.sound.ModSounds;
 import net.lordoflizardz.onemillionbananas.util.BetterBrewingRecipe;
 import net.lordoflizardz.onemillionbananas.util.ModItemProperties;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
+import net.lordoflizardz.onemillionbananas.world.structure.ModStructures;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -85,6 +86,8 @@ public class OneMillionBananas
         ModEntityTypes.register(eventBus);
 
         GeckoLib.initialize();
+
+        ModStructures.register(eventBus);
 
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
