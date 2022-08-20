@@ -22,6 +22,7 @@ import net.lordoflizardz.onemillionbananas.sound.ModSounds;
 import net.lordoflizardz.onemillionbananas.util.BetterBrewingRecipe;
 import net.lordoflizardz.onemillionbananas.util.ModItemProperties;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
+import net.lordoflizardz.onemillionbananas.village.ModVillagers;
 import net.lordoflizardz.onemillionbananas.world.structure.ModStructures;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -89,6 +90,8 @@ public class OneMillionBananas
 
         ModStructures.register(eventBus);
 
+        ModVillagers.register(eventBus);
+
         eventBus.addListener(this::clientSetup);
         eventBus.addListener(this::setup);
 
@@ -141,6 +144,8 @@ public class OneMillionBananas
 
         BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD,
                 ModItem.COBALT_INGOT.get(), ModPotions.FREEZE_POTION.get()));
+
+        ModVillagers.registerPOIs();
     }
 
 

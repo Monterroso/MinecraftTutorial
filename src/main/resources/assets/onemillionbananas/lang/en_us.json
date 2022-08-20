@@ -74,5 +74,7 @@
   "tooltip.onemillionbananas.dousing_rod.tooltip": "Press §eSHIFT§r for hint",
   "tooltip.onemillionbananas.speedy_block.tooltip": "Zoom zoom!",
 
-  "effect.onemillionbananas.freeze": "Freeze"
+  "effect.onemillionbananas.freeze": "Freeze",
+
+  "entity.minecraft.villager.onemillionbananas.blastmaster": "BlastMaster"
 }

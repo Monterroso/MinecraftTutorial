@@ -6,6 +6,7 @@ import net.lordoflizardz.onemillionbananas.command.SetHomeCommand;
 import net.lordoflizardz.onemillionbananas.config.OneMillionBananasClientConfigs;
 import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.util.KaupenTitleScreen;
+import net.lordoflizardz.onemillionbananas.village.ModVillagers;
 import net.minecraft.client.gui.screens.TitleScreen;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.npc.VillagerProfession;
@@ -87,6 +88,29 @@ public class ModEvents {
             trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 12),
                     stack,4,5,0.09F));
+        }
+
+        if(event.getType() == ModVillagers.BLASTMASTER.get()) {
+            Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
+            ItemStack stack = new ItemStack(ModItem.COBALT_PAXEL.get(), 1);
+            int villagerLevel = 1;
+
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 12),
+                    stack,4,5,0.09F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 27),
+                    stack,4,5,0.09F));
+            trades.get(villagerLevel).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 35),
+                    stack,4,5,0.09F));
+            trades.get(2).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 5),
+                    stack,4,5,0.09F));
+            trades.get(2).add((trader, rand) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD, 6),
+                    stack,4,5,0.09F));
+
         }
     }
 }
