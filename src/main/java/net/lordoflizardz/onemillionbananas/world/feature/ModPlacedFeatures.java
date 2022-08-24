@@ -5,10 +5,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
-import net.minecraft.world.level.levelgen.placement.BiomeFilter;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.*;
 
 public class ModPlacedFeatures {
     public static final Holder<PlacedFeature> CHERRY_BLOSSOM_PLACED = PlacementUtils.register("cherry_blossom_placed",
@@ -23,4 +20,10 @@ public class ModPlacedFeatures {
             ModConfiguredFeature.COBALT_ORE, ModOrePlacement.commonOrePlacement(
                     OneMillionBananasCommonConfigs.COBALT_ORE_VEINS_PER_CHUNK.get(), // VeinsPerChunk
                     HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
+
+    public static final Holder<PlacedFeature> COBALT_GEODE_PLACED = PlacementUtils.register("cobalt_geode_placed",
+            ModConfiguredFeature.COBALT_GEODE,
+            RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+            BiomeFilter.biome());
 }
