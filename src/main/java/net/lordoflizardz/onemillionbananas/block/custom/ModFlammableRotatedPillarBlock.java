@@ -7,6 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -55,17 +56,16 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
 
     @Nullable
     @Override
-    public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player,
-                                           ItemStack stack, ToolAction toolAction) {
-
-        if(stack.getItem() instanceof AxeItem) {
-            for (Map.Entry<Supplier<Block>,Supplier<Block>> entry : STRIPPABLES.entrySet()) {
-                if(state.getBlock().equals(entry.getKey().get())) {
-                    return entry.getValue().get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
-                }
+    public BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
+        if(context.getItemInHand().getItem() instanceof AxeItem) {
+            if(state.is(ModBlocks.CHERRY_BLOSSOM_LOG.get())) {
+                return ModBlocks.STRIPPED_CHERRY_BLOSSOM_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+            if(state.is(ModBlocks.CHERRY_BLOSSOM_WOOD.get())) {
+                return ModBlocks.STRIPPED_CHERRY_BLOSSOM_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
         }
 
-        return super.getToolModifiedState(state, world, pos, player, stack, toolAction);
+        return super.getToolModifiedState(state, context, toolAction, simulate);
     }
 }

@@ -1,10 +1,11 @@
 package net.lordoflizardz.onemillionbananas.command;
+
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 
 public class ReturnHomeCommand {
@@ -22,10 +23,10 @@ public class ReturnHomeCommand {
             int[] playerPos = player.getPersistentData().getIntArray(OneMillionBananas.MOD_ID + "homepos");
             player.teleportTo(playerPos[0], playerPos[1], playerPos[2]);
 
-            source.sendSuccess(new TextComponent("Player returned Home!"), true);
+            source.sendSuccess(Component.literal("Player returned Home!"), true);
             return 1;
         } else {
-            source.sendFailure(new TextComponent("No Home Position has been set!"));
+            source.sendFailure(Component.literal("No Home Position has been set!"));
             return -1;
         }
     }

@@ -2,6 +2,7 @@ package net.lordoflizardz.onemillionbananas.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffects;
@@ -37,7 +38,7 @@ public class SpeedyBlock extends Block {
     }
 
     @Override
-    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, Random pRandom) {
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
         super.animateTick(pState, pLevel, pPos, pRandom);
         float chanceSpawn = .35f;
         float timesPerTick = 4;
@@ -45,7 +46,7 @@ public class SpeedyBlock extends Block {
             if(chanceSpawn < pRandom.nextFloat()) {
                 pLevel.addParticle(ParticleTypes.SMOKE, pPos.getX() + pRandom.nextDouble(),
                         pPos.getY() + 0.5D, pPos.getZ() + pRandom.nextDouble(),
-                        0d, 0.015d + pRandom.nextDouble(0.075d), 0d);
+                        0d, 0.015d + pRandom.nextDouble(), 0d);
             }
         }
     }

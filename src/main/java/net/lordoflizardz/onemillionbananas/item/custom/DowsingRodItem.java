@@ -4,15 +4,10 @@ import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.sound.ModSounds;
 import net.lordoflizardz.onemillionbananas.util.InventoryUtil;
 import net.lordoflizardz.onemillionbananas.util.ModTags;
-import net.minecraft.Util;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.ChatType;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -63,13 +58,13 @@ public class DowsingRodItem extends Item {
             }
 
             if (!foundBlock) {
-                player.sendMessage(new TranslatableComponent("item.onemillionbananas.dowsing_rod.no_valuables"), player.getUUID());
+                player.sendSystemMessage(Component.translatable("item.onemillionbananas.dowsing_rod.no_valuables"));
             }
         }
 
         if (!pContext.getLevel().isClientSide()) {
             MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
-            server.getPlayerList().broadcastMessage(new TextComponent(pContext.getPlayer() + " has used a divining rod"), ChatType.CHAT, Util.NIL_UUID);
+            server.getPlayerList().broadcastSystemMessage(Component.literal(pContext.getPlayer() + " has used a divining rod"), true);
         }
 
         pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
@@ -81,14 +76,14 @@ public class DowsingRodItem extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (Screen.hasShiftDown()) {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.onemillionbananas.dousing_rod.tooltip.shift"));
+            pTooltipComponents.add(Component.translatable("tooltip.onemillionbananas.dousing_rod.tooltip.shift"));
         } else {
-            pTooltipComponents.add(new TranslatableComponent("tooltip.onemillionbananas.dousing_rod.tooltip"));
+            pTooltipComponents.add(Component.translatable("tooltip.onemillionbananas.dousing_rod.tooltip"));
         }
 
         if (pStack.hasTag() && !pStack.getTag().getString("onemillionbananas.found").isEmpty()) {
             String oreFound = pStack.getTag().getString("onemillionbananas.found");
-            pTooltipComponents.add(new TextComponent(oreFound));
+            pTooltipComponents.add(Component.literal(oreFound));
         }
     }
 
@@ -102,12 +97,12 @@ public class DowsingRodItem extends Item {
     }
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block blockBelow) {
-        player.sendMessage(new TextComponent(this.getText(blockPos, blockBelow)), player.getUUID());
+        player.sendSystemMessage(Component.literal(this.getText(blockPos, blockBelow)));
     }
 
     private String getText(BlockPos blockPos, Block blockBelow) {
         return String.format("Found %s at (%d, %d, %d)",
-                blockBelow.asItem().getRegistryName().toString(), blockPos.getX(), blockPos.getY(), blockPos.getZ());
+                blockBelow.asItem().toString(), blockPos.getX(), blockPos.getY(), blockPos.getZ());
     }
 
     private boolean isValuableBlock(BlockState state) {

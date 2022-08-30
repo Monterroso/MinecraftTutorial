@@ -1,7 +1,6 @@
 package net.lordoflizardz.onemillionbananas.entity;
 
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
-import net.lordoflizardz.onemillionbananas.entity.custom.ModBoatEntity;
 import net.lordoflizardz.onemillionbananas.entity.custom.RaccoonEntity;
 import net.lordoflizardz.onemillionbananas.entity.custom.TigerEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -14,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
-            DeferredRegister.create(ForgeRegistries.ENTITIES, OneMillionBananas.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, OneMillionBananas.MOD_ID);
 
     public static final RegistryObject<EntityType<RaccoonEntity>> RACCOON = ENTITY_TYPES.register("raccoon",
             () -> EntityType.Builder.of(RaccoonEntity::new, MobCategory.CREATURE)
@@ -26,11 +25,11 @@ public class ModEntityTypes {
                     .sized(1f, 0.75f)
                     .build(new ResourceLocation(OneMillionBananas.MOD_ID, "tiger").toString()));
 
-    public static final RegistryObject<EntityType<ModBoatEntity>> BOAT_ENTITY =
-            ENTITY_TYPES.register("mod_boat", () -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
-                            MobCategory.MISC).fireImmune().sized(1.375F, 0.5625F)
-                    .setCustomClientFactory((spawnEntity, world) -> new ModBoatEntity(world, 0, 0, 0))
-                    .build("mod_boat"));
+//    public static final RegistryObject<EntityType<ModBoatEntity>> BOAT_ENTITY =
+//            ENTITY_TYPES.register("mod_boat", () -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+//                            MobCategory.MISC).fireImmune().sized(1.375F, 0.5625F)
+//                    .setCustomClientFactory((spawnEntity, world) -> new ModBoatEntity(world, 0, 0, 0))
+//                    .build("mod_boat"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

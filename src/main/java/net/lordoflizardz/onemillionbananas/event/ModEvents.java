@@ -1,4 +1,5 @@
 package net.lordoflizardz.onemillionbananas.event;
+
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.lordoflizardz.onemillionbananas.OneMillionBananas;
 import net.lordoflizardz.onemillionbananas.command.ReturnHomeCommand;
@@ -8,7 +9,6 @@ import net.lordoflizardz.onemillionbananas.item.ModItem;
 import net.lordoflizardz.onemillionbananas.util.KaupenTitleScreen;
 import net.lordoflizardz.onemillionbananas.village.ModVillagers;
 import net.minecraft.client.gui.screens.TitleScreen;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +17,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ScreenOpenEvent;
+import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -41,7 +41,7 @@ public class ModEvents {
     @SubscribeEvent
     public static void onPlayerCloneEvent(PlayerEvent.Clone event) {
         if(!event.getOriginal().getLevel().isClientSide()) {
-            event.getPlayer().getPersistentData().putIntArray(OneMillionBananas.MOD_ID + "homepos",
+            event.getEntity().getPersistentData().putIntArray(OneMillionBananas.MOD_ID + "homepos",
                     event.getOriginal().getPersistentData().getIntArray(OneMillionBananas.MOD_ID + "homepos"));
         }
     }
@@ -53,7 +53,7 @@ public class ModEvents {
                 Player player = (Player)event.getSource().getDirectEntity();
                 if (player.getMainHandItem().getItem() == Items.NETHER_BRICK) {
                     player.getMainHandItem().shrink(1);
-                    event.getEntityLiving().setSecondsOnFire(2);
+                    event.getEntity().setSecondsOnFire(2);
                 }
             }
         }
@@ -61,10 +61,10 @@ public class ModEvents {
 
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
-    public static void openGui(ScreenOpenEvent event) {
+    public static void openGui(ScreenEvent.Opening event) {
         if (OneMillionBananasClientConfigs.CUSTOM_TITLE_SCREEN.get() &&
                 event.getScreen() instanceof TitleScreen && !(event.getScreen() instanceof KaupenTitleScreen)) {
-            event.setScreen(new KaupenTitleScreen());
+            event.setNewScreen(new KaupenTitleScreen());
         }
     }
 
